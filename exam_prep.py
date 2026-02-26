@@ -13,17 +13,17 @@ print(type("abc"[2]))
 print(type("abcabcabc".split("a")))
 
 # What is the result of the following operations
-(2+3)
-(6/2)
-(2 != 3)
-(5 or 6)
-print(2*2)
-print
-("abc".find)
-("bubu"*2)
-["abc", 2]
-("abc"[2])
-("abcabcabc".split("a"))
+#(2+3)
+#(6/2)
+#(2 != 3)
+#(5 or 6)
+#print(2*2)
+#print
+#("abc".find)
+#("bubu"*2)
+#["abc", 2]
+#("abc"[2])
+#("abcabcabc".split("a"))
 
 # 3
 a = 2
@@ -71,3 +71,41 @@ def find_words(book_filename):
     print(found_words)
 
 find_words("book.txt")
+
+
+# Order of Prints
+a=2
+b=3
+c="abc"
+print(a,b,c)
+print(a,b,c,sep=",")
+a+=2
+a==5
+print(a)
+print(c*(a-b))
+d = c.find("b")
+print(d)
+print(d and b)
+print(d == True)
+e = str(a) + str(b) + str(c) + str(d)
+print(e)
+print(e[1::2])
+print(e+e[::-1])
+
+# Write a function that takes an integer as parameter and returns a list of all the
+# divisors of that number:
+# ex: 47 -> [1,47], 28 -> [1,2,4,7,14,28]
+
+def Divisor_finder(number):
+    '''
+    Finds all divisors of a given number
+    :param number: Number that you want to find divisors for
+    :return: List of divisors
+    '''
+    divisors = []
+    for i in range(1, number+1):
+        if number % i == 0:
+            divisors.append(i)
+    return divisors
+print(Divisor_finder(20))
+print(Divisor_finder(7))
