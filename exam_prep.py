@@ -109,3 +109,29 @@ def Divisor_finder(number):
     return divisors
 print(Divisor_finder(20))
 print(Divisor_finder(7))
+
+# Write a function that forces the user to enter a multiple of 6 number. Use try,
+# except to catch invalid inputs. Return that number
+
+def Multiple_6(number):
+    '''
+    Allows only multiples of 6 to be entered.
+    :param number: Potential multiple of 6
+    :return: None
+    '''
+
+prompt = "Choose a number: "
+number = float(input(prompt))
+try:
+    if number % 6 == 0:
+        print(int(number), "is a multiple of 6")
+except TypeError:
+    print("Please enter a number")
+except ValueError:
+    print("Please enter a number")
+else:
+    print(number, "is not a multiple of 6")
+
+
+
+
