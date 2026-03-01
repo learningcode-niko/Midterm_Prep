@@ -125,12 +125,20 @@ number = float(input(prompt))
 try:
     if number % 6 == 0:
         print(int(number), "is a multiple of 6")
+    else:
+        print(number, "is not a multiple of 6")
 except TypeError:
     print("Please enter a number")
 except ValueError:
-    print("Please enter a number")
-else:
-    print(number, "is not a multiple of 6")
+    print("Please enter an number")
+
+# Print the multiplication table 1-10 without duplicates (if a*b=c appears, then b*a=c should not)
+# Suppose you can only do additions. Write a program that reads two positive, integer numbers a and b. It
+# computes a**b.
+# Read an int number. Check if the number is a palindrome. (A palindrome number read backwards has the same
+# value. Example of palindrome numbers: 123454321, 999, 1598951)
+
+
 
 
 
