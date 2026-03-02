@@ -108,7 +108,7 @@ def Divisor_finder(number):
             divisors.append(i)
     return divisors
 print(Divisor_finder(20))
-print(Divisor_finder(7))
+print(Divisor_finder(560))
 
 # Write a function that forces the user to enter a multiple of 6 number. Use try,
 # except to catch invalid inputs. Return that number
@@ -133,13 +133,45 @@ except ValueError:
     print("Please enter an number")
 
 # Print the multiplication table 1-10 without duplicates (if a*b=c appears, then b*a=c should not)
+
+for a in range(1, 11):
+    for b in range(a, 11):
+        print(a, "*", b, "=", a*b)
+
 # Suppose you can only do additions. Write a program that reads two positive, integer numbers a and b. It
 # computes a**b.
+
+try:
+    a = input("Give me a positive integer a: ")
+    a = int(a)
+    b = input("Give me a positive integer b: ")
+    b = int(b)
+
+    result = 1
+
+    for i in range(b):
+        temp = 0
+        for j in range(result):
+            temp += a
+        result = temp
+
+    print("The result of", a, "**", b, "is", result)
+
+except ValueError:
+    print("Please give me proper positive integers")
+
 # Read an int number. Check if the number is a palindrome. (A palindrome number read backwards has the same
 # value. Example of palindrome numbers: 123454321, 999, 1598951)
 
+try:
+    num = input("Give me an integer: ")
+    int(num)   # check that it is a valid integer
 
+    if num == num[::-1]:
+        print(num, "is a palindrome")
+    else:
+        print(num, "is not a palindrome")
 
-
-
+except ValueError:
+    print("Please give me a proper integer")
 
