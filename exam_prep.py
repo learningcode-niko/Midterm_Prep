@@ -1,5 +1,7 @@
 # Choose type of the expression : int, float, bool, NoneType, String, List, Function_or_Method
 # type()
+from os import remove
+
 print(type(2+3))
 print(type(6/2))
 print(type(2 != 3))
@@ -175,3 +177,83 @@ try:
 except ValueError:
     print("Please give me a proper integer")
 
+#Create a guessing game:
+#Generate a random number between 1 and 20.
+#Let the user guess until correct.
+#Tell them “Too high” or “Too low”.
+
+import random
+
+ans = random.randint(1, 20)
+
+while True:
+    guess = input("Guess a number between 1 and 20 (type quit to exit): ")
+
+    if guess == "quit":
+        break
+
+    guess = int(guess)
+
+    if guess == ans:
+        print("Congratulations! You guessed the correct number!")
+        break
+    elif guess > ans:
+        print("Too high")
+    else:
+        print("Too low")
+
+#Keeps asking the user for numbers
+#Stops when the user types "quit"
+#Prints:
+#The largest number entered
+#The smallest number entered
+#The average
+
+biggest = None
+smallest = None
+list_of_numbers = []
+
+while True:
+    number = input("Choose a number: ")
+    if number == "quit":
+        break
+
+    number = float(number)
+
+    list_of_numbers.append(number)
+    if biggest == None or number > biggest:
+        biggest = number
+    if smallest == None or number < smallest:
+        smallest = number
+    print(biggest)
+    print(smallest)
+    print(sum(list_of_numbers)/len(list_of_numbers))
+
+#Asks the user to enter a sentence.
+#Ignores punctuation: .,!?
+#Converts everything to lowercase.
+#Counts how many times each word appears.
+#Prints:
+#The word that appears the most
+#How many times it appears
+#If two words are tied for most frequent, print:
+
+punctuation = ".,!?;"
+d = {}
+
+sentence = input("Give a sentence: ")
+
+for p in punctuation:
+    sentence = sentence.replace(p, "")
+
+sentence = sentence.lower()
+
+words = sentence.split()
+
+for word in words:
+    if word in d:
+        d[word] += 1
+    else:
+        d[word] = 1
+
+print(d)
